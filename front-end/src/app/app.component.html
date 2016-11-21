@@ -1,0 +1,46 @@
+<main>
+  <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">Inspiration</a>
+    </div>
+  </div>
+
+  <div class="splash-container">
+      <div class="splash">
+          <h1 class="splash-head">.NET Core & Angular 2</h1>
+          <p class="splash-subhead">
+              The basics
+          </p>
+      </div>
+  </div>
+
+<div class="content-wrapper"> 
+   <div class="content">
+      <div class="pure-menu pure-menu-horizontal pure-g">
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-u-lg-1-3">
+
+                <h3 class="content-subhead">
+                    <a routerLink="/intro" routerLinkActive="active" class="pure-button pure-button-primary">Intro</a>
+                </h3>
+                
+            </li>
+            <li class="pure-menu-item pure-u-lg-1-3">
+                <h3 class="content-subhead">
+                    <a routerLink="/angular-two" routerLinkActive="active" class="pure-button pure-button-primary">Angular 2</a>
+                </h3>
+            </li>
+            <li class="pure-menu-item pure-u-lg-1-3">
+                <h3 class="content-subhead">
+                    <a routerLink="/dot-net-core" routerLinkActive="active" class="pure-button pure-button-primary">.Net Core</a>
+                </h3>
+            </li>
+        </ul>
+      </div>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+   </div>
+</div>
+
+</main>
