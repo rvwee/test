@@ -1,0 +1,27 @@
+<form class="pure-form-aligned" #ingredientForm="ngForm">
+    <h1>Ingredient:</h1>
+    <div class="pure-control-group">
+        <label for="description">Omschrijving</label>
+        <input type="text" class="form-control" id="description"
+                required
+                [(ngModel)]="ingredient.description" name="description"
+                #description="ngModel" >
+        <div [hidden]="description.valid || description.pristine"
+                class="alert alert-danger">
+            Omschrijving is verplicht
+        </div>
+    </div>
+    
+    <div class="pure-control-group">
+    <label for="extraInfo">Extra informatie</label>
+    <textarea  class="twothirds" id="extraInfo"
+            [(ngModel)]="ingredient.extraInfo" name="extraInfo"
+            #name="ngModel" ></textarea>
+    </div>
+
+    <div class="pure-controls">
+        <button type="button" class="btn btn-default" [disabled]="!ingredientForm.form.valid" (click)="finish()">Opslaan</button>
+        <button type="button" class="btn btn-default" (click)="cancel()">Annuleren</button>
+    </div>
+</form>
+    

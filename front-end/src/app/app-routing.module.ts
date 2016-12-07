@@ -7,7 +7,7 @@ import { IntroModule } from '../intro/intro.module';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/',
+    redirectTo: '/diner',
     pathMatch: 'full'
   },
   {

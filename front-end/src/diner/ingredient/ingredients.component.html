@@ -1,0 +1,5 @@
+<table class="no-border">
+    <tbody>
+        <tr ingredient *ngFor="let ingredient of ingredients; let i = index" (click)="onIngredientPressed(i)" [ingredient]="ingredient" [index]="i"></tr>
+    </tbody>
+</table>

@@ -22,13 +22,12 @@ export class BaseService {
         return this.getObject<T>(url, params);
     }
 
-    protected postObject<T>(url: string, object: T): Observable<T> {
-        return this.http.post(url, JSON.stringify(object), this.postOptions)
-            .map(res => {
-                    console.log(JSON.stringify(res));
-                    return (res.json() as T);
-                }
-            );
+    protected postObject<T>(url: string, object: T): Observable<Response> {
+        return this.http.post(url, object, this.postOptions);
+    }
+
+    protected putObject<T>(url: string, object: T) {
+        return this.http.put(url, object, this.postOptions);
     }
 
     private getObject<T>(url: string, params: URLSearchParams): Observable<T> {
@@ -39,6 +38,20 @@ export class BaseService {
             });
 
         return this.http.get(url, options).map(res => (res.json() as T));
+    }
+
+    private handleError(error: Response | any) {
+        let errMsg: string;
+        if (error instanceof Response) {
+            const body = error.json() || '';
+            const err = body.error || JSON.stringify(body);
+            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+        } else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+
+        console.log(errMsg);
+        return Observable.throw(errMsg);
     }
 
     protected getCacheKey(serviceInstance: any, name: string): string {

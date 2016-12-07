@@ -10,6 +10,7 @@ import { ServicesModule } from '../shared/services/services.module';
 import { IntroModule } from '../intro/intro.module';
 import { AngularTwoModule } from '../angular-two/angular-two.module';
 import { DotNetCoreModule } from '../dot-net-core/dot-net-core.module';
+import { DinerModule } from "../diner/diner.module";
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { DotNetCoreModule } from '../dot-net-core/dot-net-core.module';
     AngularTwoModule,
     DotNetCoreModule,
     ServicesModule,
-    IntroModule
+    IntroModule,
+    DinerModule
   ],
   declarations: [
     AppComponent

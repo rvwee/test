@@ -1,0 +1,28 @@
+<h1>Gerechten {{getMealCount()}}</h1>
+<table class="pure-table pure-table-horizontal">
+    <thead>
+        <tr>
+            <th>Gerecht</th>
+            <th>Maker</th>
+            <th>Extra informatie</th>
+            <th>Ingredienten</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let meal of meals" (click)="newOrEditMeal(meal.title)">
+            <td>{{meal.title}}</td>
+            <td>{{meal.chef}}</td>
+            <td>{{meal.extraInfo}}</td>
+            <td>
+                <ingredients [ingredients]="meal.ingredients"></ingredients>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="top-padding">
+    <button tpye="button" (click)="newOrEditMeal()">+</button>
+</div>
+<div>
+    <meal-entry [title]="currentMealTitle" *ngIf="mealEntryVisible" (onFinished)="finished($event)"></meal-entry>
+</div>

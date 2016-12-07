@@ -1,0 +1,6 @@
+.no-border {
+    border: 0px;
+    padding: 2px;
+    word-wrap: break-word;
+    width: 33%;
+}
