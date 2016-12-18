@@ -12,9 +12,14 @@ export class IngredientEntryComponent implements OnInit {
     @Output() ingredientDeleted = new EventEmitter<Ingredient>();
     @Output() cancelled = new EventEmitter();
 
-    constructor() { }
+    private isNewIngredient: boolean;
 
-    ngOnInit() { }
+    constructor() { 
+    }
+
+    ngOnInit() { 
+        this.isNewIngredient = this.ingredient.description === undefined;
+    }
 
     cancel() {
         this.cancelled.emit();

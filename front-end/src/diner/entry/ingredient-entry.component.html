@@ -1,5 +1,5 @@
 <form class="pure-form-aligned" #ingredientForm="ngForm">
-    <h1>Ingredient:</h1>
+    <h3>Ingredient:</h3>
     <div class="pure-control-group">
         <label for="description">Omschrijving</label>
         <input type="text" class="form-control" id="description"
@@ -20,7 +20,7 @@
     </div>
 
     <div class="pure-controls">
-        <button type="button" class="btn btn-default" *ngIf="ingredient" (click)="delete()">Verwijder</button>
+        <button type="button" class="btn btn-default" *ngIf="!isNewIngredient" (click)="delete()">Verwijder</button>
         <button type="button" class="btn btn-default" (click)="cancel()">Annuleren</button>
         <button type="button" class="btn btn-default" [disabled]="!ingredientForm.form.valid" (click)="finish()">Opslaan</button>
     </div>
