@@ -56,6 +56,11 @@ export class MealEntryComponent implements OnInit {
         this.ingredient = null;
     }
 
+    deleteIngredient(ingredient: Ingredient) {
+        this.meal.ingredients = this.meal.ingredients.filter(i => i.description !== ingredient.description);
+        this.ingredient = null;
+    }
+
     cancelIngredient() {
         this.ingredient = null;
     }

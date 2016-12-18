@@ -9,6 +9,7 @@ import { Ingredient } from '../ingredient/ingredient.model';
 export class IngredientEntryComponent implements OnInit {
     @Input() ingredient: Ingredient;
     @Output() ingredientAdded = new EventEmitter<Ingredient>();
+    @Output() ingredientDeleted = new EventEmitter<Ingredient>();
     @Output() cancelled = new EventEmitter();
 
     constructor() { }
@@ -22,5 +23,9 @@ export class IngredientEntryComponent implements OnInit {
     finish() {
         this.ingredientAdded.emit(this.ingredient);
         this.ingredient = null;
+    }
+
+    delete() {
+        this.ingredientDeleted.emit(this.ingredient);
     }
 }

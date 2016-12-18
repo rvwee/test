@@ -37,7 +37,7 @@
                 <div class="pure-u-1 pure-u-md-1-2"> 
                     <h2>Ingredienten ({{meal.ingredients.length}})</h2>
                     <ingredients [ingredients]="meal.ingredients" (ingredientSelected)="ingredientSelected($event)"></ingredients>
-                    <ingredient-entry *ngIf="ingredient" [ingredient]="ingredient" (ingredientAdded)="added($event)" (cancelled)="cancelIngredient()"></ingredient-entry>
+                    <ingredient-entry *ngIf="ingredient" [ingredient]="ingredient" (ingredientAdded)="added($event)" (ingredientDeleted)="deleteIngredient($event)" (cancelled)="cancelIngredient()"></ingredient-entry>
                     <button *ngIf="!ingredient" (click)="add()">+</button>
 
                 <div *ngIf="!ingredient" class="pure-controls ">
